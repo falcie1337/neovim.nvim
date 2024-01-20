@@ -1,7 +1,5 @@
 # neovim.nvim
 
-https://github.com/kdheepak/kickstart.nvim/assets/1813121/f3ff9a2b-c31f-44df-a4fa-8a0d7b17cf7b
-
 ### Introduction
 
 *This is a fork of [dam9000/kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim), which aims to be my personal minimal neovim config.* 

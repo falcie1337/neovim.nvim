@@ -128,11 +128,23 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    -- Set up gruvbox theme  
+    'ellisonleao/gruvbox.nvim',
     priority = 1000,
+    enabled = true,
+    opts = {
+      transparent_mode = true,
+      contrast = "soft",
+      italic = {
+        strings = true,
+        emphasis = true,
+        comments = true,
+        folds = true,
+      }
+    },
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.o.background = "dark"
+      vim.cmd.colorscheme 'gruvbox'
     end,
   },
 
@@ -142,8 +154,8 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
-        theme = 'onedark',
+        icons_enabled = true,
+        theme = 'gruvbox',
         component_separators = '|',
         section_separators = '',
       },

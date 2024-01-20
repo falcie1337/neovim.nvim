@@ -1,25 +1,24 @@
-# kickstart-modular.nvim
+# neovim.nvim
 
 https://github.com/kdheepak/kickstart.nvim/assets/1813121/f3ff9a2b-c31f-44df-a4fa-8a0d7b17cf7b
 
 ### Introduction
 
-*This is a fork of [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) that moves from a single file to a multi file configuration.*
+*This is a fork of [dam9000/kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim), which aims to be my personal minimal neovim config.* 
 
-A starting point for Neovim that is:
+kickstart-modular.nvim in of itself is:
 
 * Small
 * Documented
 * Modular
 
-This repo is meant to be used by **YOU** to begin your Neovim journey; remove the things you don't use and add what you miss.
+That is why i chose it as my starting point, and you probably should too. I preferred giving a try to the kickstart-modular.nvim instead of kickstart.nvim because i already saw the INCREDIBLE on-going [typecraft](https://twitter.com/typecraft_dev) video guide on configuring neovim from scratch prior to it, so i didn't wanted to go through the hassle to migrate the original kickstart.nvim to a modular config since we already have that with the dam9000 fork. 
 
-Kickstart.nvim targets *only* the latest ['stable'](https://github.com/neovim/neovim/releases/tag/stable) and latest ['nightly'](https://github.com/neovim/neovim/releases/tag/nightly) of Neovim. If you are experiencing issues, please make sure you have the latest versions.
+I do NOT recommend you directly fork and clone my configuration into yours for daily driving purposes (even though you can if you want to), but definitely give a look at the source code to get some inspiration and learn some thing or other with me! If you also want to give me any insights and contribute to me, feel free to open a issue on my repo! 
 
-Distribution Alternatives:
-- [LazyVim](https://www.lazyvim.org/): A delightful distribution maintained by @folke (the author of lazy.nvim, the package manager used here)
+This README will not be exhaustely updated, however i will try to make it up-to-date when i think i've made some good changes and progressed enough on my config file. (and i will definitely change the overall look and some of the content of the README too, since it is too based off kickstart-modular.nvim as of now, which is only because i do not have the will or need to completely reformulate it *yet* xD)
 
-### Installation
+### Step-by-step if you STILL want to install my config:
 
 > **NOTE** 
 > [Backup](#FAQ) your previous configuration (if any exists)
@@ -42,17 +41,17 @@ Clone kickstart.nvim:
 
 - on Linux and Mac
 ```sh
-git clone https://github.com/dam9000/kickstart-modular.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone https://github.com/falcie1337/neovim.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
 - on Windows (cmd)
 ```
-git clone https://github.com/dam9000/kickstart-modular.nvim.git %userprofile%\AppData\Local\nvim\
+git clone https://github.com/falcie1337/neovim.nvim.git %userprofile%\AppData\Local\nvim\
 ```
 
 - on Windows (powershell)
 ```
-git clone https://github.com/dam9000/kickstart-modular.nvim.git $env:USERPROFILE\AppData\Local\nvim\
+git clone https://github.com/falcie1337/neovim.nvim.git $env:USERPROFILE\AppData\Local\nvim\
 ```
 
 
@@ -74,11 +73,15 @@ nvim --headless "+Lazy! sync" +qa
 
 ### Getting Started
 
-See [Effective Neovim: Instant IDE](https://youtu.be/stqUbv-5u2s), covering the previous version. Note: The install via init.lua is outdated, please follow the install instructions in this file instead. An updated video is coming soon.
+You can see [Effective Neovim: Instant IDE](https://youtu.be/stqUbv-5u2s), covering the previous version. Note: The install via init.lua is outdated, please follow the install instructions in this file instead. They say an updated video is coming soon, however it hasn't come out yet.
+
+I also recommend watching the [typecraft's playlist](https://www.youtube.com/playlist?list=PLsz00TDipIffreIaUNk64KxTIkQaGguqn) on configuring neovim from scratch, it's nice, simple and straight to the point, it will give you some basic knowledge of how things should work when working on your neovim configuration, and he covers from getting a custom colorscheme all the way to implementing a debugger. I definitely think it's worth checking it out.
+
+If you want to get even deeper into it, i suggest giving a look into The Primeagen's [secondary channel](https://www.youtube.com/@TheVimeagen), at the moment i'm writing this, he posted some long (40 min+) vods configuring neovim from scratch with the lazy.nvim package manager, and he also just talks a lot about Vim and Neovim, so why not checking the man out? ;) 
 
 ### Recommended Steps
 
-[Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repo (so that you have your own copy that you can modify) and then installing you can install to your machine using the methods above.
+[Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) kickstart-modular.nvim (so that you have your own copy that you can modify) and then installing you can install to your machine using the methods above.
 
 > **NOTE**  
 > Your fork's url will be something like this: `https://github.com/<your_github_username>/kickstart-modular.nvim.git`
@@ -92,7 +95,7 @@ See [Effective Neovim: Instant IDE](https://youtu.be/stqUbv-5u2s), covering the 
   * Modify `init.lua` with additional plugins.
   * Include the `lua/kickstart/plugins/*` files in your configuration.
 
-You can also merge updates/changes from the repo back into your fork, to keep up-to-date with any changes for the default configuration.
+You can also merge updates/changes from the kickstart repo back into your fork, to keep up-to-date with any changes for the default configuration.
 
 #### Example: Adding an autopairs plugin
 
@@ -147,14 +150,14 @@ This will install the tree plugin and add the command `:Neotree` for you. You ca
 
 ### Contribution
 
-Pull-requests are welcome. The goal of this repo is not to create a Neovim configuration framework, but to offer a starting template that shows, by example, available features in Neovim. Some things that will not be included:
+Issues are welcome. The goal of this repo is not to be a Neovim distro that tries to replace kickstart.nvim, but to offer some examples on how you can try to structure your neovim configuration and give inspiration for people who are still conflicted on how their editor should look like. My config also aims to be minimal, but functional, so keep that in mind. Some things to take into account: 
 
-* Custom language server configuration (null-ls templates)
-* Theming beyond a default colorscheme necessary for LSP highlight groups
+* I can't warrant any help with exclusively personal issues you encounter with the config while you use it. If you want to drastically change it, you should do it yourself (or just use the kickstart/kickstart-modular.nvim template as a starting point), i myself am a beginner at programming and i don't know much about Lua yet, so if you ask for ask to me, i probably won't know jackshit, and it's even worse if you are trying to do any big changes to it, so keep that in mind.
+* Please refrain for treating this repository as THE exceptional config example (i know it's hard to think of it like that, but it's always good to remind people), always take everything here with a grain of salt even if you were to implement something i did to your configuration if you are a beginner like i am. If you do something you saw here, this doesn't mean i can help you out if you get to any problems, you can try to reach out here if you want, but i don't consider myself as capacitated enough to troubleshoot someone elses' files. You do your things at your own risk.
 
-Each PR, especially those which increase the line count, should have a description as to why the PR is necessary.
+I will accept any issue, but this is a small-scope personal project, so it doesn't mean i will try to get every issue closed and resolved asap. Even more so if the issue you open is related to one of the above cited. However, i can try to tackle into some of them in my spare time. The best kind of issues someone can open on my repo are simple suggestions that improve the usabilty of the config and doesn't add many lines to the codebase and aren't too hard to implement. 
 
-### FAQ
+### FAQ (This FAQ is related to Kickstart, i will update it some time later to relate to my personal fork)
 
 * What should I do if I already have a pre-existing neovim configuration?
   * You should back it up, then delete all files associated with it.
